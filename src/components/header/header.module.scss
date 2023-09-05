@@ -1,0 +1,51 @@
+@keyframes headerAppearing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+  width: 100%;
+  z-index: 3;
+  position: fixed;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  animation: headerAppearing 0.9s ease-in-out forwards;
+
+  div {
+    width: 33%;
+   // color: black;
+    transition: color 0.25s ease-in-out 0.5s;
+  }
+  div:nth-child(2){
+    text-align: center;
+    cursor: pointer;
+    span {
+      transition: color 0.2s ease-in-out;
+    }
+  }
+
+  div:nth-child(1) {
+    font-size: 32px;
+    font-family: 'Permanent Marker', cursive;
+
+  }
+
+}
+
+.whiteText {
+  color: white;
+  transition: color 0.25s ease-in-out 0.55s !important;
+
+}
+
+.whiteTextSpan {
+  color: white;
+  transition: color 0.25s ease-in-out 1.2s !important;
+}

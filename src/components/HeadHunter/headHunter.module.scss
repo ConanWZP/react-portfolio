@@ -1,0 +1,70 @@
+@keyframes appearingIcon {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  opacity: 0;
+  animation: appearingIcon 1s ease-in-out forwards 1.2s;;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.container {
+  width: 128px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  width: 100%;
+  height: auto;
+  fill: #27282a;
+  animation: 10s linear infinite rotating;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #27282a;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid black;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: #27282a;
+    background-color: white;
+  }
+}
