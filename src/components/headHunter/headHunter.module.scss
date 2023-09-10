@@ -8,9 +8,11 @@
 }
 
 .wrapper {
+
   opacity: 0;
-  animation: appearingIcon 1s ease-in-out forwards 1.2s;;
+  animation: appearingIcon 1s ease-in-out forwards 1.2s;
   position: fixed;
+  z-index: 3;
   right: 20px;
   bottom: 20px;
   display: flex;
@@ -20,15 +22,25 @@
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+ */
+  @media (max-width: 650px) {
+    right: 10px;
+    bottom: 35px;
+  }
 }
 
 .container {
-  width: 128px;
+  width: 180px;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  @media (max-width: 1024px) {
+    width: 110px;
+  }
+  @media (max-width: 650px) {
+    width: 90px;
+  }
 }
 
 @keyframes rotating {
@@ -43,11 +55,11 @@
 .icon {
   width: 100%;
   height: auto;
-  fill: #27282a;
   animation: 10s linear infinite rotating;
 }
 
 .link {
+  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,13 +70,24 @@
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
   background-color: #27282a;
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   border: 1px solid black;
   transition: all 0.3s ease-in-out;
+
   &:hover {
     color: #27282a;
     background-color: white;
+  }
+  @media (max-width: 1024px) {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+  @media (max-width: 650px) {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
   }
 }

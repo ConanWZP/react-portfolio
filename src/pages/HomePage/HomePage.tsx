@@ -1,73 +1,49 @@
 import styles from './homePage.module.scss'
-import {FaReact} from 'react-icons/fa'
-import SocialNetworks from "../../components/socialNetworks/SocialNetworks.tsx";
-import HeadHunter from "../../components/HeadHunter/HeadHunter.tsx";
-import { Link } from 'react-router-dom';
-import Transition from "../../Transition.tsx";
+
 import {useContext} from "react";
 import { InfoContext } from '../../App.tsx';
-import avatar from './../../assets/avatar.png'
+import MainInfo from "../../components/home/mainInfo/MainInfo.tsx";
+import Footer from "../../components/home/footer/Footer.tsx";
+import Button from "../../components/home/button/Button.tsx";
+import {motion} from "framer-motion";
 
 
 
 function HomePage() {
 
-   // const [infoIsShowed, setInfoIsShowed] = useState(false)
     const {infoIsShowed, setInfoIsShowed} = useContext(InfoContext)
 
 
     return (
+        <>
         <div className={styles.wrapper}>
-            {/*<header className={styles.header}>
-                <div>JX</div>
-                <div>Home</div>
-
-            </header>*/}
-
-            <HeadHunter />
             <div className={infoIsShowed ? styles.leftSideShowed : styles.leftSideHidden}></div>
             <div className={styles.mainSection}>
-                {
-                    infoIsShowed ?
-                        <>
-                            <div className={styles.mainInfo}>
-                                <div className={styles.mainInfoLeft}>
-                                    <h2>Hi,</h2>
-                                    <h3>I'm Yaroslav</h3>
-                                </div>
-                                <div className={styles.mainInfoRight}>
-                                    <img src={avatar} alt={'Image'} />
-                                </div>
-                            </div>
-
-                        </>
-
-
-                    : null
-
-                }
-                <div className={`${styles.btnWrapper} ${infoIsShowed ? styles.moveBtnToTopRight : styles.moveBtnToCenter}`}>
-                    {/*<div className={styles.reactLogo}>
+                {/*<div className={styles.reactLogo}>
                                 <FaReact />
                             </div>*/}
-
-                    <button className={`${infoIsShowed ? styles.smallBtn : styles.pulsedButton}`}
-                            onClick={() => setInfoIsShowed((prevState) => !prevState)}>
-                        {infoIsShowed ? 'Close info' : 'Show info'}
-                    </button>
-
-                </div>
-
+                { infoIsShowed ? <MainInfo /> : null }
+                <Button infoIsShowed={infoIsShowed} setInfoIsShowed={setInfoIsShowed} />
             </div>
-            <div c></div>
-            <SocialNetworks infoIsShowed={infoIsShowed} />
-            <div className={styles.footer}>
-                <Link to={'/mySkills'} className={infoIsShowed ? styles.footerElementsMod : styles.footerElements}>My Skills</Link>
-                <Link to={'/myProjects'} className={styles.footerElements}>My Projects</Link>
-            </div>
+            <Footer infoIsShowed={infoIsShowed} />
         </div>
+    <motion.div
+        className={'slide-in'}
+        initial={{scaleY: 0}}
+        animate={{scaleY: 0}}
+        exit={{scaleY: 1}}
+        transition={{duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.5}}
+    />
+    <motion.div
+        className={'slide-out'}
+        initial={{scaleY: 1}}
+        animate={{scaleY: 0}}
+        exit={{scaleY: 0}}
+        transition={{duration: 0.7, ease: [0.22, 1, 0.36, 1]}}
+    />
+</>
     );
 }
 
-const WrappedHomePage = Transition(HomePage)
-export default WrappedHomePage;
+
+export default HomePage

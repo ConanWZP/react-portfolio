@@ -12,14 +12,21 @@ const Header = () => {
     const navigate = useNavigate()
     const {infoIsShowed} = useContext(InfoContext)
 
+
+
     return (
-        <header className={styles.header}>
+        <div className={`${styles.header} ${!infoIsShowed && styles.headerBackground}`}>
             <div className={`${infoIsShowed && styles.whiteText}`}>
                 JX
             </div>
-            <div onClick={() => navigate('/')}><span className={`${infoIsShowed && styles.whiteTextSpan}`}>Ho</span><span>me</span></div>
+            <div>
+                <div onClick={() => navigate('/')}>
+                    <span className={`${infoIsShowed && styles.whiteTextSpan}`}>Ho</span>
+                    <span className={`${infoIsShowed && styles.whiteTextSpanSecond}`}>me</span>
+                </div>
+            </div>
             <div></div>
-        </header>
+        </div>
     );
 };
 

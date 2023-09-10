@@ -1,6 +1,6 @@
 import styles from './socialNetworks.module.scss'
-import {BsGithub, BsTelegram} from 'react-icons/bs'
-import VkIcon from "../VkIcon.tsx";
+// import {BsGithub, BsTelegram} from 'react-icons/bs'
+// import VkIcon from "../VkIcon.tsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVk, faGithub, faTelegram } from '@fortawesome/free-brands-svg-icons'
 import {FC} from "react";
