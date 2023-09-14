@@ -1,6 +1,6 @@
 import './App.scss'
 import HomePage from "./pages/HomePage/HomePage.tsx";
-import {Route, Routes, useLocation} from "react-router-dom";
+import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import Header from "./components/header/Header.tsx";
 import MyProjects from "./pages/MyProjects/MyProjects.tsx";
 import MySkills from "./pages/MySkills/MySkills.tsx";
@@ -24,21 +24,14 @@ export const InfoContext = createContext<InfoContextTypes>({
 
 function App() {
 
-    const [isLoadingPage, setIsLoadingPage] = useState(true)
+
     const [infoIsShowed, setInfoIsShowed] = useState(false)
     const location = useLocation();
 
     useEffect(() => {
         setInfoIsShowed(false)
     }, [location])
-    useEffect(() => {
-        setIsLoadingPage(true)
-        setIsLoadingPage(false)
-    }, []);
 
-    if (isLoadingPage) {
-        return <div>Loader...</div>
-    }
 
     return (
         <InfoContext.Provider value={{infoIsShowed, setInfoIsShowed}}>
@@ -50,6 +43,7 @@ function App() {
                         <Route path={'/'} element={<HomePage/>}/>
                         <Route path={'/mySkills'} element={<MySkills/>}/>
                         <Route path={'/myProjects'} element={<MyProjects/>}/>
+                        <Route path={'*'} element={<Navigate to={'/'}/>}/>
                     </Routes>
                     <Header key={`${location.pathname}1`}/>
                     <HeadHunter key={`${location.pathname}2`} />
