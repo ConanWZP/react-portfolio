@@ -8,13 +8,14 @@
 }
 
 .wrapper {
-
+  transition: all 0.6s ease-in-out;
   opacity: 0;
   animation: appearingIcon 1s ease-in-out forwards 1.2s;
   position: fixed;
   z-index: 3;
   right: 20px;
-  bottom: 20px;
+ // top: 50%;
+ // transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +25,23 @@
   -ms-user-select: none; /* IE10+ */
   @media (max-width: 650px) {
     right: 10px;
-    bottom: 35px;
+
+  }
+}
+
+.topRight {
+  top: 0;
+ // transform: translateY(-200%);
+ // top: 5px !important;
+}
+
+.bottomRight {
+  top: calc(100vh - 180px);
+  //transform: translateY(100%);
+//  top: 70% !important;
+  @media (max-width: 650px) {
+
+    top: calc(100vh - 135px);
   }
 }
 

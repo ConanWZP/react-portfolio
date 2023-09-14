@@ -17,7 +17,7 @@ export interface IMockArray {
 const mockArrayPrimary: IMockArray[] = [
     {
         technology: 'HTML + CSS',
-        bottomInfo: `Semantic, SCSS, Responsive design, Cross-browser development`,
+        bottomInfo: `Семантика, SCSS, Адаптивная и Кросс-браузерная вёрстка`,
         image: <AiFillHtml5/>
     },
     /*{
@@ -27,12 +27,12 @@ const mockArrayPrimary: IMockArray[] = [
     },*/
     {
         technology: 'JS',
-        bottomInfo: 'Variables, Objects, Arrays, Functions, Loops, OOP, FP',
+        bottomInfo: 'Переменные, Объекты, Массивы, Функции, Циклы, ООП, ФП',
         image: <SiJavascript/>
     },
     {
         technology: 'React',
-        bottomInfo: 'Components, Hooks, Routing, SCSS modules',
+        bottomInfo: 'Компоненты, Хуки, Роутинг, SCSS модули',
         image: <BiLogoReact/>
     },
     {
@@ -42,7 +42,7 @@ const mockArrayPrimary: IMockArray[] = [
     },
     {
         technology: 'TS',
-        bottomInfo: 'Primitives, Objects, Array, Interfaces, Extends, Generics, Utility Types',
+        bottomInfo: 'Примитивы, Объекты, Массивы, Интерфейсы, Extends, Generics, Utility Types',
         image: <SiTypescript/>
     },
 ]
@@ -81,7 +81,7 @@ const MySkills = () => {
             <div className={styles.wrapper}>
                 <div className={styles.container}>
                     <div className={styles.items}>
-                        <span>Primary Skills</span>
+                        <span>Основные навыки</span>
                         {
                             mockArrayPrimary.map((item, index) => (
                                 <Item key={index} technology={item.technology} bottomInfo={item.bottomInfo}
@@ -91,7 +91,7 @@ const MySkills = () => {
                     </div>
 
                     <div className={styles.items}>
-                        <span>Secondary Skills</span>
+                        <span>Дополнительные навыки</span>
                         {
                             mockArraySecondary.map((item, index) => (
                                 <Item key={index} technology={item.technology} bottomInfo={item.bottomInfo}

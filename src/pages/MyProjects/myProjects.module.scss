@@ -1,3 +1,12 @@
+@keyframes appearingProjects {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .wrapper {
   flex: 1 1 auto;
   width: 100%;
@@ -6,11 +15,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  animation: appearingProjects 1s ease-in-out forwards 1.2s;
   padding-bottom: 30px;
 }
 
 .container {
-  padding: 135px 120px 0 120px;
+  padding: 135px 80px 0 80px;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -19,6 +30,12 @@
  // justify-content: center;
  // overflow-y: auto;
  // width: 100%;
+  @media (max-width: 650px) {
+    padding: 115px 40px 0 80px;
+  }
+  @media (max-width: 425px) {
+    padding: 115px 25px 0 60px;
+  }
 }
 
 .space {

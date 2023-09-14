@@ -6,9 +6,9 @@ const MainInfo = () => {
     return (
         <div className={styles.mainInfo}>
             <div className={styles.mainInfoLeft}>
-                <h2>Hi,</h2>
-                <h3>I'm Yaroslav</h3>
-                <h4>I'm frontend developer and this is my portfolio</h4>
+                <h2>Привет,</h2>
+                <h3>Я Ярослав,</h3>
+                <h4>Я frontend developer и это моё портфолио</h4>
             </div>
             <div className={styles.mainInfoRight}>
                 <img src={avatar} alt={'Image'} />

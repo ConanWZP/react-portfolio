@@ -8,7 +8,7 @@ const Button:FC<Pick<InfoContextTypes, 'infoIsShowed' | 'setInfoIsShowed'>> = ({
         <div className={`${styles.btnWrapper} ${infoIsShowed ? styles.moveBtnToTopRight : styles.moveBtnToCenter}`}>
             <button className={`${infoIsShowed ? styles.smallBtn : styles.pulsedButton}`}
                     onClick={() => setInfoIsShowed((prevState) => !prevState)}>
-                {infoIsShowed ? 'Click here' : 'Click here'}
+                {infoIsShowed ? 'Нажмите' : 'Нажмите'}
             </button>
         </div>
     );

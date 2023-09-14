@@ -1,6 +1,6 @@
 
 import styles from './header.module.scss'
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useContext} from "react";
 import {InfoContext} from "../../App.tsx";
 
@@ -11,11 +11,12 @@ const Header = () => {
 
     const navigate = useNavigate()
     const {infoIsShowed} = useContext(InfoContext)
-
+    const location = useLocation()
 
 
     return (
-        <div className={`${styles.header} ${!infoIsShowed && styles.headerBackground}`}>
+       /* <div className={`${styles.header} ${!infoIsShowed && styles.headerBackground}`}>*/
+            <div className={`${styles.header} ${location.pathname !== '/' && styles.headerBackground}`}>
             <div className={`${infoIsShowed && styles.whiteText}`}>
                 JX
             </div>

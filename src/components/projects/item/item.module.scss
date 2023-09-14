@@ -10,9 +10,21 @@
   -webkit-box-shadow: 7px 14px 11px 8px rgba(42, 55, 66, 0.3);
   -moz-box-shadow: 7px 14px 11px 8px rgba(42, 55, 66, 0.3);
   box-shadow: 7px 14px 11px 8px rgba(42, 55, 66, 0.3);
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
+  @media (max-width: 650px) {
+    padding: 20px;
+    border-radius: 15px;
+    border-bottom-left-radius: 10px;
+    -webkit-box-shadow: 4px 9px 6px 5px rgba(42, 55, 66, 0.3);
+    -moz-box-shadow: 4px 9px 6px 5px rgba(42, 55, 66, 0.3);
+    box-shadow: 4px 9px 6px 5px rgba(42, 55, 66, 0.3);
+  }
+  @media (max-width: 425px) {
+    padding: 10px;
+  }
+
 }
 
 .leftSide {
@@ -22,8 +34,11 @@
   width: 50%;
   overflow: hidden;
   border-radius: 10px;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
+  }
+  @media (max-width: 650px) {
+    border-radius: 7px;
   }
 
   img {
@@ -43,8 +58,10 @@
   flex-direction: column;
   width: 50%;
   padding-left: 30px;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
+    padding-left: 0;
+    padding-top: 20px;
   }
 }
 
@@ -58,6 +75,11 @@
   z-index: -1;
   border-radius: 40px;
   border-bottom-left-radius: 25px;
+  @media (max-width: 650px) {
+    border-radius: 25px;
+    border-bottom-left-radius: 15px;
+    height: 102%;
+  }
 
 }
 
@@ -71,17 +93,33 @@
   &:hover {
     color: #4d4949;
   }
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
+  @media (max-width: 510px) {
+    font-size: 26px;
+  }
 }
 
 .description {
   font-size: 20px;
   flex: 1 1 auto;
+  p:first-child {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 510px) {
+    font-size: 16px;
+  }
 }
 
 .links {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
+  @media (max-width: 510px) {
+    gap: 6px;
+  }
 
   a {
     text-decoration: none;
@@ -94,13 +132,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 510px) {
+      font-size: 30px;
+    }
   }
   a:nth-child(2) {
     background-color: black;
+    flex: 1 1 auto;
+    text-align: center;
     color: white;
     font-size: 24px;
     padding: 5px 16px;
     border-radius: 5px;
+    @media (max-width: 510px) {
+      font-size: 18px;
+      padding: 2px 3px;
+    }
+  }
+  a:nth-child(3) {
+    color: black;
+    font-size: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 510px) {
+      font-size: 30px;
+    }
   }
 
 }

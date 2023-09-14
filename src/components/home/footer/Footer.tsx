@@ -9,8 +9,8 @@ interface FooterProps {
 const Footer:FC<FooterProps> = ({infoIsShowed}) => {
     return (
         <div className={styles.footer}>
-            <Link to={'/mySkills'} className={infoIsShowed ? styles.footerElementsMod : styles.footerElements}>My Skills</Link>
-            <Link to={'/myProjects'} className={styles.footerElements}>My Projects</Link>
+            <Link to={'/mySkills'} className={infoIsShowed ? styles.footerElementsMod : styles.footerElements}>Мои навыки</Link>
+            <Link to={'/myProjects'} className={styles.footerElements}>Мои проекты</Link>
         </div>
     );
 };
