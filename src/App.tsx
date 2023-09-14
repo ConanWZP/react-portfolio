@@ -1,11 +1,11 @@
 import './App.scss'
 import HomePage from "./pages/HomePage/HomePage.tsx";
-import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import Header from "./components/header/Header.tsx";
 import MyProjects from "./pages/MyProjects/MyProjects.tsx";
 import MySkills from "./pages/MySkills/MySkills.tsx";
 import {AnimatePresence} from "framer-motion";
-import {createContext, useEffect, useLayoutEffect, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 import SocialNetworks from "./components/socialNetworks/SocialNetworks.tsx";
 import HeadHunter from "./components/headHunter/HeadHunter.tsx";
 
@@ -24,17 +24,21 @@ export const InfoContext = createContext<InfoContextTypes>({
 
 function App() {
 
+    const [isLoadingPage, setIsLoadingPage] = useState(true)
     const [infoIsShowed, setInfoIsShowed] = useState(false)
     const location = useLocation();
-    const navigate = useNavigate()
+
     useEffect(() => {
         setInfoIsShowed(false)
     }, [location])
-
-    useLayoutEffect(() => {
-        navigate('/')
+    useEffect(() => {
+        setIsLoadingPage(true)
+        setIsLoadingPage(false)
     }, []);
 
+    if (isLoadingPage) {
+        return <div>Loader...</div>
+    }
 
     return (
         <InfoContext.Provider value={{infoIsShowed, setInfoIsShowed}}>
