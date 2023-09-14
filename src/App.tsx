@@ -5,7 +5,7 @@ import Header from "./components/header/Header.tsx";
 import MyProjects from "./pages/MyProjects/MyProjects.tsx";
 import MySkills from "./pages/MySkills/MySkills.tsx";
 import {AnimatePresence} from "framer-motion";
-import {createContext, useEffect, useState} from "react";
+import {createContext, useEffect, useLayoutEffect, useState} from "react";
 import SocialNetworks from "./components/socialNetworks/SocialNetworks.tsx";
 import HeadHunter from "./components/headHunter/HeadHunter.tsx";
 
@@ -31,7 +31,7 @@ function App() {
         setInfoIsShowed(false)
     }, [location])
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         navigate('/')
     }, []);
 
