@@ -1,6 +1,6 @@
 import './App.scss'
 import HomePage from "./pages/HomePage/HomePage.tsx";
-import {Route, Routes, useLocation} from "react-router-dom";
+import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import Header from "./components/header/Header.tsx";
 import MyProjects from "./pages/MyProjects/MyProjects.tsx";
 import MySkills from "./pages/MySkills/MySkills.tsx";
@@ -26,9 +26,14 @@ function App() {
 
     const [infoIsShowed, setInfoIsShowed] = useState(false)
     const location = useLocation();
+    const navigate = useNavigate()
     useEffect(() => {
         setInfoIsShowed(false)
     }, [location])
+
+    useEffect(() => {
+        navigate('/')
+    }, []);
 
 
     return (
