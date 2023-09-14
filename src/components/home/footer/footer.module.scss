@@ -1,6 +1,6 @@
 @keyframes footerAppearing {
   0% {
-    transform: translateY(200%);
+    transform: translateY(300%);
   }
   80% {
     transform: translateY(-20%);
@@ -14,7 +14,7 @@
 .footer {
   display: flex;
   justify-content: space-evenly;
-  transform: translateY(200%);
+  transform: translateY(300%);
   animation: footerAppearing 0.8s ease-in-out forwards 1.8s;
   font-size: 26px;
   @media (max-width: 1024px) {
