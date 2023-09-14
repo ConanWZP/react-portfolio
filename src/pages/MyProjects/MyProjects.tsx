@@ -41,8 +41,8 @@ const projectsArray: IProjectsArray[] = [
         usedTechnologies: `React, TS, SCSS`,
         image: portfolio,
         linkToGitHub: 'https://github.com/ConanWZP/react-portfolio',
-        linkToProject: 'Добавить ссылку',
-        linkToYouTube: 'Добавить ссылку'
+        linkToProject: 'https://react-portfolio-six-mauve.vercel.app',
+        linkToYouTube: 'https://www.youtube.com/watch?v=PVA-20wFVbM'
     },
     {
         title: 'React Estate',
